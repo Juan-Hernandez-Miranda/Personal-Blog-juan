@@ -1,0 +1,1583 @@
+/* Línea decorativa después de la línea azul en cada artículo */
+.custom-top-line-after {
+  width: 200%;
+  max-width: 840px;
+  height: 1px;
+  background: #B0B0B0;
+  margin-top: 100px;
+  margin-bottom: 60px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  display: block;
+}
+/* Línea decorativa superior para los artículos de AI */
+.custom-top-line {
+  width: 100%;
+  max-width: 960px;
+  height: 1px;
+  background: #B0B0B0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  border-radius: 2px;
+  display: block;
+  margin-top: 46px;
+}
+/*en este documento vamos a hacer el diseño de la primera pagina de mi web*/
+
+html {
+  font-size: 16px; /* base = 1rem */
+}
+
+:root {
+    --font-base: 1rem;
+    --font-h1: 2rem;
+    --font-h2: 1.25rem;
+    --font-text-projec: 1.5rem;
+    --font-title-proje: 2.5rem;
+}
+
+/*----- Estilos del Header de Navegación -----*/
+.main-header {
+  background-color: rgba(34, 44, 83, 0.7); /* barra con opacidad 0.8 */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 2px 180px;
+  width: 100%;
+  box-sizing: border-box;
+  backdrop-filter: blur(8px);
+  position: relative;        /* crea un contexto por encima del contenido */
+  z-index: 3000;            /* asegura que el header y el menú estén sobre todo lo demás */
+}
+
+#name-page {
+  flex: 0 0 auto;
+}
+
+#menu-personal-blog {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 120px;
+  padding-bottom: 25px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 65px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navbar li {
+  margin: 0;
+}
+
+/* Dropdown estilo Apple para todas las páginas */
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item .nav-trigger {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  width: 240px;
+  background-color: rgba(12, 19, 48, 0.98);
+  padding: 12px 0;
+  border-radius: 6px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity .15s ease, transform .15s ease;
+  z-index: 4000;
+}
+
+/* mantener abierto mientras el cursor esté sobre el item */
+.nav-item:hover .dropdown {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* bridge invisible para que no se cierre entre POST y el panel */
+.dropdown::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px 22px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.dropdown a:hover {
+  background-color: #283B87; /* usa tu color de hover */
+}
+
+#ctn-icon-search {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  padding: 8px 15px;
+  margin-bottom: 30px;
+  border-radius: 20px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #333;
+  font-size: 16px;
+  width: 170px;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-icon {
+  color: #666;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/*----- Fin estilos del Header -----*/
+
+.logo {
+  font-family: 'Montserrat', sans-serif; /* la tipografía que usaste */
+  font-size: 30px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);/* todo en mayúsculas */
+  letter-spacing: 2px;       /* espacio entre letras */
+  cursor: pointer;
+
+}
+
+.logo span {
+  display: block;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+body {
+    background-color: #02001D;
+    overflow-x: hidden;
+    margin: 0;
+  padding: 0;
+}
+
+/* ----- Hero About Me ----- */
+/*en este apartado estara el css de aboutme */
+.hero-wrapper {
+  position: relative;
+  box-sizing: border-box;
+  background-image:
+    linear-gradient(rgba(0, 5, 30, 0.55), rgba(0, 5, 30, 0.75)),
+    url("/frontend/assets/cubo-minecraft_3840x2160_xtrafondos.com.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  min-height: calc(100vh - 90px);
+  padding: 60px 20px 80px 20px;
+  box-sizing: border-box;
+}
+
+.hero-content h1 {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 3rem;
+  margin: 0 0 20px 0;
+}
+
+.hero-content p {
+  max-width: 800px;
+  font-family: "Alata", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Estilos para líneas horizontales (hr) estilizadas */
+hr {
+  border: none;
+  height: 0.4px;
+  background: #808080;
+  margin: 60px 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(128, 128, 128, 0.2);
+}
+
+ .title-static {
+  position: relative;
+  display: inline-block; /* Para que la línea se ajuste solo al texto */
+  font-size: 40px; /* ejemplo, ajusta a lo que uses */
+  font-weight: bold;
+  color: rgb(255, 255, 255); /* color del texto */
+  font-family: "Archivo Black",  sans-serif;
+}
+
+.title-design {
+  text-align: center; /* Centra el contenido */
+}
+
+/* Ajustes específicos solo para la página de AI */
+.ai-page .title-design {
+  text-align: left;        /* alineado a la izquierda solo en post_AI */
+  padding-left: 570px;    /* desplaza el bloque 200px desde el borde izquierdo */
+  margin-top: 60px;       /* separación de 70px respecto al header */
+}
+
+.ai-page .title-static {
+  font-size: var(--font-h1);
+  font-family: "Archivo Black", sans-serif;
+  margin-left: 0;         /* el posicionamiento lo controla el contenedor */
+}
+
+.title-post {
+  text-align: center; /* Centra el título "personal project" */
+}
+
+.best-month-title {
+  text-align: left;   /* alinear el texto hacia la izquierda */
+  margin-left: 550px; /* mueve el título hacia la izquierda; ajusta este valor si lo quieres más o menos */
+}
+
+/* Cuadro especial debajo de la imagen de Minecraft en about_me */
+.about-banner-title {
+  width: 100%;
+  height: 182px;
+  margin: 0 0 60px 0; /* pegado a la imagen de arriba */
+  padding: 24px 32px;
+  background: #04003C; /* color de fondo del cuadro */
+  border-radius: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* centra vertical y horizontalmente el contenido */
+  box-shadow: 0 18px 30px 0 rgba(109, 149, 210, 0.49); /* color #6D95D2 con opacidad 0.49, blur 30, spread 0 */
+}
+
+.title-static::after {
+  content: "";
+  position: absolute;
+  left: 0;              /* Empieza justo donde empieza el texto */
+  bottom: -7px;        /* Distancia de 12px debajo del texto */
+  width: 80px;          /* Largo fijo de la línea */
+  height: 4px;          /* Grosor de la línea */
+  background-color: #0031f7; /* Color de la línea */
+  border-radius: 3px;   /* Bordes redondeados opcional */
+}
+
+/* Centrar la línea decorativa solo para el título dentro del cuadro de About Me */
+.about-banner-title .title-static::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.title-link{
+    text-decoration: none;
+}
+
+.post_title:hover{
+    color: #283B87
+}
+
+.white_stripe {
+    content: "";
+    display: block;
+    margin: color 0.4s ease-in-out;
+
+}
+
+.blue-stripe::after{
+    content: "";
+    display: block;
+    margin: 8px auto 0 auto;
+    width: 60px;  /* ancho inicial */
+    height: 4px;
+    background-color: #283B87; /* azul */
+    transition: width 0.4s ease-in-out; 
+}
+
+.blue-stripe:hover::after {
+    width: var(--font-h2);
+}
+
+.header-enlaces {
+    color: #DBDBDB;
+    font-family: "Alata", sans-serif;
+    text-decoration: none;
+    font-size: var(--font-base);
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.header-enlaces::after {
+    content: "";
+    position: absolute;
+    bottom: 0; /* debajo del texto */
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white; /* color de la línea */
+    transform: scaleX(0); /* empieza invisible */
+    transform-origin: center; /* punto de origen: el centro */
+    transition: transform 0.5s ease;
+}
+
+.header-enlaces:hover::after {
+    transform: scaleX(1);
+}
+
+/* Triángulo junto a POST (sobrescribe el subrayado solo para nav-trigger) */
+.nav-item .nav-trigger::after {
+  content: "";
+  margin-left: 6px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #DBDBDB; /* triángulo apuntando hacia abajo */
+  position: relative;
+  top: 1  px; /* SUBIR/BAJAR EL TRIÁNGULO: ajusta este valor */
+  background: none;          /* anula la línea de subrayado */
+  transform: none;           /* sin escala de la animación anterior */
+  transition: transform 0.2s ease;
+}
+
+/* cuando el menú está abierto (hover en POST), girar triángulo hacia arriba */
+.nav-item:hover .nav-trigger::after {
+  transform: rotate(180deg);
+}
+
+
+.text-static {
+    color: #ffffff;
+    font-family: "Archivo Black", sans-serif;
+    font-size: var(--font-base);
+}
+
+/*---------------- Sección Description (texto + imagen) ----------------*/
+
+.description-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 110px;
+  max-width: 1400px;
+  margin: 80px auto;
+  padding: 40px 80px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.description-text {
+  flex: 1;
+  max-width: 600px;
+  text-align: center;
+}
+
+.description-text .text-static {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  font-family: 'Archivo Black';
+}
+
+.description-card {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 650px;
+  height: 380px;
+  margin-left: 0;
+  padding: 30px 40px;
+  border-radius: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(186, 129, 255, 0.35), transparent 55%),
+              radial-gradient(circle at 50% 100%, rgba(96, 140, 255, 0.35), transparent 55%),
+              linear-gradient(145deg, #141820, #1a1f2b 40%, #10141d 80%);
+  box-shadow: 0 0 45px rgba(167, 120, 255, 0.7),
+              0 0 90px rgba(103, 143, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.description-card img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.7);
+}
+
+.description-section::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  background-color: #30363d;
+}
+
+/* Variante para About Me: texto izquierda, imagen derecha, mismo estilo base */
+.about-description-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 110px;
+  max-width: 1400px;
+  margin: 80px auto;
+  padding: 40px 80px;
+  box-sizing: border-box;
+  position: relative; /* para poder posicionar la línea completa */
+}
+
+.about-description-section::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100vw;            /* ocupa todo el ancho de la ventana */
+  height: 1px;
+  background-color: #30363d; /* mismo estilo que en index */
+}
+
+/* Línea completa debajo de la sección "Purposes" en About Me */
+.about-purposes-section {
+  position: relative;
+  padding-bottom: 67px; /* separa la línea 67px del texto */
+}
+
+.about-purposes-section::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100vw;            /* ocupa todo el ancho de la ventana */
+  height: 1px;
+  background-color: #30363d; /* mismo estilo que las demás líneas */
+}
+
+.about-description-text {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+}
+
+.about-description-text .text-static {
+  text-align: left;
+  color: #CCCCCC;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  font-family: 'Archivo Black';
+}
+
+.about-description-card {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 650px;
+  height: 380px;
+  margin-left: 0;
+  padding: 30px 40px;
+  border-radius: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(186, 129, 255, 0.35), transparent 55%),
+              radial-gradient(circle at 50% 100%, rgba(96, 140, 255, 0.35), transparent 55%),
+              linear-gradient(145deg, #141820, #1a1f2b 40%, #10141d 80%);
+  box-shadow: 0 0 45px rgba(167, 120, 255, 0.7),
+              0 0 90px rgba(103, 143, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.about-description-card img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.7);
+}
+
+/* Sección "My Hobbies" en About Me */
+.about-hobbies-section {
+  width: 100vw;           /* ocupa todo el ancho de la pantalla */
+  max-width: 100vw;       /* evita que se limite por un máximo menor */
+  margin: 0 auto 80px;    /* centrado horizontal en el viewport */
+  padding: 40px 0 60px;   /* espacio inferior controla la distancia hasta la línea */
+  box-sizing: border-box;
+  position: relative;     /* para poder dibujar la línea completa debajo */
+}
+
+/* Línea completa debajo del carrusel de hobbies */
+.about-hobbies-section::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100vw;            /* ocupa todo el ancho de la ventana */
+  height: 1px;
+  background-color: #30363d; /* mismo estilo que las otras líneas */
+}
+
+.about-hobbies-title .title-static::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.about-hobbies-text {
+  width: 75vw; /* 75% del ancho de la pantalla */
+  margin: 30px auto 0;
+  font-family: "Alata", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #ffffff;
+  text-align: left;
+}
+
+.hobbies-block {
+  margin-top: 110px; /* separación exacta respecto al texto superior */
+  display: flex;
+  justify-content: center;
+}
+
+.hobbies-carousel {
+  width: 60vw;
+  max-width: 900px;
+  height: 360px;
+  overflow: visible; /* permite ver parcialmente las imágenes laterales */
+  position: relative;
+}
+
+.hobbies-carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hobbies-slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.6s ease, opacity 0.6s ease, filter 0.6s ease;
+  pointer-events: none; /* no interacción del usuario, solo auto-movimiento */
+}
+
+.hobbies-slide img {
+  width: 260px;
+  height: 360px;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.65);
+}
+
+/* Texto de la sección "Purposes" en About Me */
+.purposes-text {
+  width: 60%;
+  margin: 0 auto; /* centra el bloque horizontalmente */
+  font-size: 16px;
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 800;
+}
+
+@media (max-width: 992px) {
+  .description-section {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .description-card {
+    margin-left: 0;
+    margin-top: 40px;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+
+/*Checar apartir de aqui para arriba que podria haber alguno repertido 
+haceindo inefiente el codigo*/
+
+/*----------------desde aqui empieza la parte de los post iniciales de la pagina web, en donde aparecen los 
+post que encabezan el inicio---------------*/
+
+.post_container {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Primera columna más grande, segunda más pequeña */
+  grid-template-rows: auto auto; /* Dos filas en la segunda columna */
+  gap: 30px; /* espacio entre posts */
+  align-items: start;
+  max-width: 1400px;
+  padding: 40px;
+  margin: 110px auto 0 auto; /* separación respecto al header */
+  position: relative; /* para poder posicionar la línea completa */
+}
+
+.post_container::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100vw; /* ocupa todo el ancho de la ventana */
+  height: 1px;
+  background-color: #30363d; /* mismo color de las otras líneas */
+}
+
+/* Estilos base para cada post */
+.main_post {
+  display: flex;
+  flex-direction: column; /* Por defecto: imagen arriba, texto abajo */
+  gap: 15px;
+  padding: 30px;
+}
+
+/* El primer post ocupa toda la altura de las dos filas */
+.main_post:first-child {
+  grid-row: 1 / 3; /* Ocupa las dos filas */
+  grid-column: 1; /* Primera columna */
+}
+
+/* Los posts 2 y 3 se apilan en la segunda columna */
+.main_post:nth-child(2) {
+  grid-row: 1; /* Primera fila */
+  grid-column: 2; /* Segunda columna */
+  flex-direction: row; /* Imagen a la izquierda, texto a la derecha */
+}
+
+.main_post:nth-child(3) {
+  grid-row: 2; /* Segunda fila */
+  grid-column: 2; /* Segunda columna */
+  flex-direction: row !important; /* Imagen a la izquierda, texto a la derecha */
+}
+
+/* Asegurar mismo ancho de imagen y texto en los posts 2 y 3 */
+.main_post:nth-child(2),
+.main_post:nth-child(3) {
+  align-items: center;
+  gap: 30px; /* separación horizontal entre imagen y texto */
+}
+
+.main_post:nth-child(2) > a,
+.main_post:nth-child(3) > a {
+	flex: 0 0 40%;  /* imagen más estrecha */
+	max-width: 40%;
+	margin: 0;      /* sin margen negativo para evitar solapado */
+}
+
+.main_post:nth-child(2) .titulo-container,
+.main_post:nth-child(3) .titulo-container {
+  flex: 0 0 300px; /* el texto ocupa exactamente 300px de ancho */
+  width: 300px;
+  max-width: 300px;
+}
+
+/* Contenedor de la imagen */
+.main_post > a {
+  display: block;
+  border-radius: 0px;
+  margin: -20px;
+  padding: 20px;
+}
+
+/* Imagen del post */
+.main_post img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 0px;
+  box-shadow: 20px 17px 30px 0 rgba(109, 149, 210, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover sobre la imagen: zoom y sombra más intensa */
+.main_post > a:hover img {
+  transform: scale(1.02);
+  /* Mantener la misma sombra azul que en "The Best In The Month" */
+  box-shadow: 20px 17px 30px 0 rgba(109, 149, 210, 0.5);
+}
+
+/* Primer post: imagen más grande */
+.main_post:first-child img {
+  max-height: 500px;
+}
+
+/* Post 2: imagen con ancho fijo 240px manteniendo proporciones */
+.main_post:nth-child(2) img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Post 3: mismo ancho 240px que el post 2, manteniendo proporciones */
+.main_post:nth-child(3) img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* CLASES MODIFICADORAS PARA CAMBIAR POSICIÓN DE IMAGEN/TEXTO */
+
+/* Imagen a la izquierda, texto a la derecha */
+.main_post.image-left {
+  flex-direction: row;
+}
+
+/* Imagen a la derecha, texto a la izquierda */
+.main_post.image-right {
+  flex-direction: row-reverse;
+}
+
+/* Imagen arriba, texto abajo (por defecto) */
+.main_post.image-top {
+  flex-direction: column;
+}
+
+/* Imagen abajo, texto arriba */
+.main_post.image-bottom {
+  flex-direction: column-reverse;
+}
+
+/* Ajustes para layouts horizontales */
+.main_post.image-left img,
+.main_post.image-right img {
+  width: 50%;
+  max-height: none;
+}
+
+.main_post.image-left .titulo-container,
+.main_post.image-right .titulo-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.titulo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+/* enlace como título (texto de los pos)*/
+.titulo-link {
+  font-size: var(--font-h1);
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  line-height: 1.3;
+  text-decoration: none; /* quita el subrayado del enlace */
+  display: inline-block;
+  transition: color 0.4s ease;
+  word-wrap: break-word;
+}
+
+/* Títulos de los posts 2 y 3 más grandes */
+.main_post:nth-child(2) .titulo-link,
+.main_post:nth-child(3) .titulo-link {
+  font-size: 32px;
+}
+
+/*linea con animacion que esta en los textos de los poss */
+.linea {
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin: 15px auto 0 auto;
+  background-color: #0031f7;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+/* Animación al pasar el cursor */
+.titulo-container:hover .titulo-link {
+  color: #283B87;
+}
+
+/*animacion de la linea que la disminuye y le cambia el color a blanco*/
+.titulo-container:hover .linea {
+  width: 30px;
+  background-color: white;
+}
+
+
+/*aqui tenemos un poco mal estructurado con respescot en lo que se ve en la pagina web ya ue esto 
+se creo despues de creo despues de descripcion pero deberia ser alravez*/
+
+/*---------apartir de aqui es el estilo y el diseño de the best in the month-----------*/
+
+/* Contenedor general de la sección para alinear título con imagen/texto */
+.best-month-container {
+  max-width: 1200px;
+  margin: 80px auto 40px auto;
+  padding: 0 20px;
+  text-align: center; /* centra el punto de referencia */
+}
+
+.best-month-container .title-static {
+  display: inline-block;           /* permite desplazar solo el título */
+  transform: translateX(-100px);     /* mueve el título 40px a la derecha */
+}
+
+/* Contenedor principal para centrar todos los artículos */
+.featured-article,
+article {
+  display: block;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  padding: 0 20px; /* Padding para pantallas pequeñas */
+}
+
+/* Layout de dos columnas solo para el primer artículo destacado */
+.featured-layout {
+  display: flex;
+  align-items: stretch; /* misma altura para ambas columnas */
+}
+
+.featured-image-col,
+.featured-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-image-col {
+  margin-right: 40px;
+}
+
+/* Centrar verticalmente el card dentro de la columna de texto */
+.featured-text-col .card {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Líneas alineadas verticalmente en ambas columnas */
+.featured-layout .image-top-divider,
+.featured-layout .text-top-divider {
+  width: 100%;
+  max-width: 448px;
+  height: 1px;
+  background: rgba(151, 151, 151, 0.918);
+  border: 0;
+  margin: 0 0 20px 0;
+  opacity: 0.7;
+}
+
+/* Línea completa debajo de toda la sección "The Best In The Month" */
+.best-month-section {
+  position: relative;
+  padding-bottom: 45px; /* separa la línea 45px del último contenido */
+}
+
+.best-month-section::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 1px;
+  background-color: #30363d;
+}
+
+/* Línea divisoria superior de la sección */
+.section-top-divider {
+  width: 488px;
+  height: 1px;
+  background: rgba(151, 151, 151, 0.918);
+  border: 0;
+  margin: 40px auto 40px auto; /* Centrada horizontalmente */
+  opacity: 0.7;
+}
+
+/* Línea divisoria encima de cada imagen de artículo */
+.image-top-divider {
+  width: 100%;
+  max-width: 488px;
+  height: 1px;
+  background: rgba(151, 151, 151, 0.918);
+  border: 0;
+  margin: 0 0 20px -20px; /* -20px para centrarla con la imagen (488-448)/2 = 20px */
+  opacity: 0.7;
+}
+
+/* Línea divisoria encima del texto del artículo */
+.text-top-divider {
+  width: 100%;
+  max-width: 488px;
+  height: 1px;
+  background: rgba(151, 151, 151, 0.918);
+  border: 0;
+  margin: -40px 0 140px 0;
+  opacity: 0.7;
+}
+
+/* Contenedor de enlace de imagen */
+.featured-article > a,
+article > a {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* Estilos para las imágenes de los artículos destacados del mes */
+.featured-article img,
+article img {
+  width: 448px;
+  height: auto;
+  display: block;
+  box-shadow: 20px 17px 30px 0 rgba(109, 149, 210, 0.5);
+  transition: opacity 0.3s ease;
+}
+
+/* Efecto hover en las imágenes */
+.featured-article img:hover,
+article img:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.featured-article .card,
+article .card {
+  display: inline-block;
+  vertical-align: middle;
+  width: 448px;
+  margin-left: 40px;
+}
+
+/* Alinear horizontalmente el texto del primer artículo con los demás
+   (sin mover la línea superior de texto) */
+.featured-layout .featured-text-col .card {
+  margin-left: 0;
+}
+
+.card {
+  text-align: center;
+  max-width: 448px;
+  transition: color 0.4s ease;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 1100px) {
+  .featured-article .card,
+  article .card {
+    margin-left: 50px; /* Reduce el gap en pantallas medianas */
+  }
+  
+  .featured-article img,
+  article img {
+    width: 350px;
+  }
+  
+  .image-top-divider {
+    max-width: 390px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-article > a,
+  article > a {
+    display: block;
+  }
+  
+  .featured-article .card,
+  article .card {
+    display: block;
+    margin-left: 0;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .image-top-divider {
+    max-width: 100%;
+  }
+  
+  .featured-article img,
+  article img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.card-text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  font-family: "Archivo Black", sans-serif;
+  transition: color 0.4s ease;
+  color: white;
+}
+
+.card-title { 
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  transition: color 0.4s ease;
+  color: white;
+  font-family: "Archivo Black", sans-serif;
+}
+
+.card:hover .card-text {
+  color: #283B87;
+}
+
+.card:hover .card-title {
+  color: #283B87;
+}
+
+.card:hover .linea {
+  width: 30px;
+  background-color: white;
+}
+
+.link-post-mont {
+  text-decoration: none;
+}
+
+
+/*
+en este apartado vamos a poner el diseño de mis proyectos
+*/
+
+
+.bloque-container {
+  display: flex;
+  justify-content: center;
+  gap: 35px; /* Espacio entre tarjetas */
+  padding: 80px;
+}
+
+.bloque {
+  flex: 1;
+  background: #201b63; /* Color de fondo de la tarjeta */
+  color: white;
+  padding: 20px;
+  border-radius: 20px; /* Bordes redondeados */
+  box-shadow: 8px 10px 20px rgba(252, 252, 252, 0.5); /* Sombra */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.bloque-container .bloque:nth-child(1) {
+  background-color: #5C8CF3;
+}
+
+.bloque-container .bloque:nth-child(2) {
+  background-color: #57559C;
+}
+
+.bloque-container .bloque:nth-child(3) {
+  background-color: #4F4D83;
+}
+
+.bloque-container .bloque:nth-child(4) {
+  background-color: #252443;
+}
+
+.bloque-container .bloque:nth-child(5) {
+  background-color: #1B124A;
+}
+
+.bloque h2 {
+  margin-bottom: 50px;
+  font-weight: bold;
+  text-transform: lowercase; /* hace que todo este en minusculas */
+  font-size: var(--font-title-proje);
+  font-family: "Archivo Black", sans-serif ;
+  font-weight: 800;
+}
+
+.bloque p {
+  font-size: var(--font-text-projec);
+  line-height: 1.4;
+  font-family: "Archivo Black", sans-serif ;
+  font-weight: 800;
+}
+
+/* Animacion al pasar el mouse */
+.bloque:hover {
+  transform: translateY(-10px); /* se levanta */
+  box-shadow: 0px 10px 25px rgba(108, 184, 255, 0.8);
+}
+
+
+/*
+en este apartado vamos a hacer el apartado final antes del pie de la pagina 
+*/
+
+
+.container-list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.centered-list {
+  width: 80%;              /* el bloque ocupa el 80% del ancho */
+  max-width: 90vw;         /* para pantallas pequeñas */
+  margin: 110px auto 0;    /* 110px de separación con lo de arriba */
+}
+
+.final-ul {
+  width: 100%;
+  font-size: 16px;                     /* tamaño de fuente 16px */
+  color: rgb(253, 253, 253);
+  padding: 0;
+  margin: 0;
+  word-break: break-word;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.final-ul li {
+  margin-bottom: 30px; /* separación de 20px entre los dos li finales */
+}
+
+/* en este apartado vamos a hacer el pie de pagina, en 
+la cual tengo el logo de la pagina y un link a las diferentes partes de la pginaa*/
+
+
+/*en este apartado lo que vamos a hacer es el rectangulo que esta hasta el final de la 
+pagina*/
+
+
+.footer_page {
+  width: 100vw;
+  height: 50px;
+  background: #070247; /* Cambia el color si lo deseas */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 50px; /* separación respecto al footer */
+}
+
+/* -------- Estilos del footer -------- */
+
+footer {
+  display: flex;
+  justify-content: center;
+  column-gap: 680px; /* separación entre logo y listas */
+  align-items: center;
+  padding: 40px 180px 0 180px;
+  box-sizing: border-box;
+  margin-top: 130px; /* separación con el contenido superior */
+  border-top: 1px solid #30363d; /* línea separadora estilo GitHub */
+}
+
+footer > div:nth-of-type(2) {
+  display: flex;
+  gap: 220px; /* separación horizontal entre las columnas de links */
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 15px;
+}
+
+footer ul li a {
+  color: #9198A1;
+  text-decoration: none;
+  font-size: 12px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.08em;
+  position: relative;
+  display: inline-block;
+}
+
+footer ul li a:hover {
+  color: #1a0aac;
+}
+
+/* Línea azul animada al pasar el cursor sobre los enlaces del footer */
+footer ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background-color: #1a0aac;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+footer ul li a:hover::after {
+  transform: scaleX(1);
+}
+
+.logo_footer {
+  font-family: 'Montserrat', sans-serif; /* la tipografía que usaste */
+  font-size: 70px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);/* todo en mayúsculas */
+  letter-spacing: 2px;       /* espacio entre letras */
+  cursor: pointer;
+
+}
+
+.logo_footer span {
+  display: block;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+
+/***********************en este apartado vamos a ver como darle el estilo a las lineas horizontales que separan a las partes de la pagina web **********************/
+
+.full-width-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(151, 151, 151, 0.918);
+  border: 0;
+  margin: 40px 0;
+  opacity: 0.7;
+}
+
+
+/*****diseño de la pagina de portafolio ******/
+
+.hero-wrapper_portafolio {
+  position: relative;
+  box-sizing: border-box;
+  background-image:
+    linear-gradient(rgba(0, 5, 30, 0.55), rgba(0, 5, 30, 0.75)),
+    url("/frontend/assets/chris-ried-ieic5Tq8YMk-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.portfolio-intro {
+  width: 600px;                 /* ancho fijo del bloque de texto */
+  max-width: 100%;
+  margin: 105px 0 0 170px;      /* 105px desde arriba, 140px desde el borde izquierdo */
+  display: flex;                /* línea a la izquierda, texto a la derecha */
+  align-items: stretch;
+  gap: 18px;
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif; /* fuente solicitada */
+  font-size: 15px;              /* tamaño de letra solicitado */
+  line-height: 1.6;             /* alto automático según la fuente */
+}
+
+.line-white {
+  width: 10px;                   /* grosor de la línea */
+  background: #ffffff;          /* color blanco */
+  opacity: 1;
+  align-self: stretch;          /* altura igual al contenido de texto */
+}
+
+.portfolio-intro p {
+  margin: 0;
+  text-align: left;             /* texto alineado a la izquierda */
+}
+
+/* ---- Grid de proyectos en portafolio ---- */
+
+.portfolio-gallery {
+  width: 100%;              /* ocupa todo el ancho de la página */
+  margin: 80px auto 0 auto; /* separación superior */
+  display: flex;
+  flex-direction: column;
+  gap: 60px;                /* separación entre filas */
+  position: relative;       /* para poder dibujar la línea inferior */
+  padding-bottom: 67px;     /* espacio entre el contenido y la línea */
+}
+
+.portfolio-gallery::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100vw;             /* línea ocupa el 100% del ancho de la ventana */
+  height: 1px;
+  background-color: #30363d; /* mismo color que en otras secciones */
+}
+
+.portfolio-row {
+  width: 100%;              /* fila del ancho completo de la página */
+  display: flex;
+  justify-content: center;  /* centra las columnas dentro de la fila */
+  gap: 40px;                /* espacio horizontal entre imágenes */
+}
+
+.portfolio-row .block {
+  width: 40%;               /* 40% del ancho total de la página */
+}
+
+.portfolio-row .block .image {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.portfolio-row .block img {
+  width: 100%;
+  height: 500px;            /* altura fija solicitada */
+  object-fit: cover;        /* recorta manteniendo proporción */
+  display: block;
+  transition: transform 0.3s ease; /* animación suave */
+}
+
+.portfolio-row .block img:hover {
+  transform: scale(0.95);   /* se hace un poco más pequeña al pasar el cursor */
+}
+
+.titulo-project {
+  margin-top: 8px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #ffffff;
+}
+
+.paragraph-project {
+  margin-top: 4px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.75rem;
+  text-align: center;
+  color: #d0d0d0;
+}
+
+/* Efecto hover: subrayar textos cuando el cursor está sobre la tarjeta */
+.portfolio-row .block .image:hover .titulo-project,
+.portfolio-row .block .image:hover .paragraph-project {
+  text-decoration: underline;
+  text-decoration-color: currentColor; /* mismo color que el texto */
+}
+
+/* ================= Página AI - Tarjeta principal ================= */
+
+/* Contenedor general de cada tarjeta de AI */
+.ai-page article.ai-main-post {
+  position: relative;
+  max-width: 960px;
+  margin: 90px auto 0 auto;
+  padding: 40px 50px 55px 70px; /* espacio interno similar al mockup */
+  box-sizing: border-box;
+  background: transparent; /* el fondo sigue siendo el de la página */
+  transform: scale(1.15);        /* todo 10% más grande */
+  transform-origin: top left;   /* mantiene proporción desde la esquina superior izquierda */
+}
+
+/* Para los artículos después del primero, usa un margen superior más pequeño */
+.ai-page article.ai-main-post:not(:first-of-type) {
+  margin-top: 40px;
+}
+
+/* Desplazar el bloque (autor + imagen + texto) un poco a la derecha */
+.ai-page .ai-main-post > div:nth-child(2) {
+  margin-left: 17px;
+}
+
+/* Título grande del post principal */
+.ai-page .ai-main-post > div:first-child a {
+  text-decoration: none;
+  display: flex;              /* línea a la izquierda, texto a la derecha */
+  align-items: center;
+  gap: 16px;
+  width: 620px;              /* mismo ancho que la imagen de abajo */
+  max-width: 100%;           /* responsive en pantallas pequeñas */
+}
+
+.ai-page .ai-main-post h1 {
+  margin: 0;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 32px;            /* tamaño pedido para el título */
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+/* Línea azul vertical a la izquierda del título (similar a portfolio-intro) */
+.ai-page .ai-main-post > div:first-child .blue-stripe-vertical {
+  width: 8px;                 /* grosor de la línea */
+  height: auto;               /* altura base automática */
+  background: #0031f7;        /* azul solicitado */
+  border-radius: 3px;
+  align-self: stretch;        /* se estira según la altura del texto */
+}
+
+/* Fila de autor / tiempo / comentarios */
+.ai-page .ai-main-post .autor-time-comment {
+  margin-top: 10px;
+  margin-left: 90px;
+  margin-bottom: -25px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  position: relative;
+  z-index: 5;
+}
+
+.ai-page .ai-main-post .autor {
+  color: #1d82ff;
+}
+
+.ai-page .ai-main-post .comment i {
+  margin-right: 4px;
+}
+
+/* Bloque imagen + descripción */
+.ai-page .ai-main-post .card-image {
+  margin-top: 30px;
+  position: relative;
+  display: inline-block; /* para que los marcos sigan el tamaño de la imagen */
+  box-shadow: none;      /* sin sombra en el contenedor de la imagen */
+}
+
+/* Marcos en esquina superior izquierda e inferior derecha, por debajo de la imagen */
+.ai-page .ai-main-post .card-image::before,
+.ai-page .ai-main-post .card-image::after {
+  content: "";
+  position: absolute;
+  width: 80px;           /* largo del brazo del marco */
+  height: 80px;           /* alto del brazo del marco */
+  border-color: #060055;  /* color del marco */
+  border-style: solid;
+  z-index: 0;             /* por debajo de la imagen */
+}
+
+/* Esquina superior izquierda */
+.ai-page .ai-main-post .card-image::before {
+  top: -18px;
+  left: -18px;
+  border-width: 18px 0 0 18px; /* solo borde superior e izquierdo */
+}
+
+/* Esquina inferior derecha - fuera de la imagen como el de arriba */
+.ai-page .ai-main-post .card-image::after {
+  bottom: -18px;
+  right: -18px;
+  border-width: 0 18px 18px 0; /* solo borde derecho e inferior */
+}
+
+.ai-page .ai-main-post .card-image a:first-child {
+  display: block;
+}
+
+.ai-page .ai-main-post .card-image img {
+  width: 620px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  box-shadow: none;      /* sin sombra en la imagen */
+  position: relative;
+  z-index: 1;             /* asegura que la imagen quede sobre los marcos */
+}
+
+/* Texto descriptivo bajo la imagen */
+.ai-page .ai-main-post .descripcion-post {
+  margin: 28px 0 0 0;
+  max-width: 620px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #f5f5f5;
+}
+
+/* Contenedor del texto + barra azul (similar al index, pero alineado a la izquierda)
+   Se aplica a todos los posts de la página de AI */
+.ai-page .ai-description-link {
+  display: inline-block;
+  text-decoration: none;
+  text-align: left;
+}
+
+/* Asegurar que el párrafo dentro del enlace queda alineado a la izquierda */
+.ai-page .ai-description-link .descripcion-post {
+  text-align: left;
+}
+
+/* Barra azul con la misma animación que en index, pero alineada a la izquierda */
+.ai-page .ai-description-link .linea {
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin: 15px auto 0 auto; /* centrada respecto al texto */
+  background-color: #0031f7;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+.ai-page .ai-description-link:hover .descripcion-post {
+  color: #283B87;
+}
+
+.ai-page .ai-description-link:hover .linea {
+  width: 30px;
+  background-color: #ffffff;
+}
