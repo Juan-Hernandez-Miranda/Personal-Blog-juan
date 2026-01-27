@@ -8,7 +8,7 @@ tengo que terminar antes de que entre otra vez a clases este en donde va converg
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
-# from sqlmodel import SQLModel
+from sqlmodel import SQLModel
 
 
 import os
