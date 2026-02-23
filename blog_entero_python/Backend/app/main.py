@@ -43,5 +43,5 @@ app.mount("/frontend", StaticFiles(directory=FRONTEND_DIR, html=True), name="fro
 
 
 @app.get("/")
-async def root():
+async def root(): ## esto lo que nos dice es que incia la pagina en index y ade ahi se va a las otras paginas
     return RedirectResponse(url="/frontend/index.html")

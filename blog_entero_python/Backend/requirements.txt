@@ -16,3 +16,5 @@ sqlmodel==0.0.31
 starlette==0.50.0
 typing-inspection==0.4.2
 typing_extensions==4.15.0
+
+## pip install -r requirements.txt

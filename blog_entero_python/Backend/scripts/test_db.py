@@ -1,4 +1,7 @@
 """Quick connectivity check against the configured database."""
+## este es un test de conexion ede base de datos, pero no est test de pruba final si no 
+# un teste intermedio a la conexcion de bases de datos
+
 from pathlib import Path
 import sys
 
