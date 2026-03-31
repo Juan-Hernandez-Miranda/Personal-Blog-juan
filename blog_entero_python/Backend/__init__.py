@@ -1,0 +1,1 @@
+# Permite que Backend sea tratado como un paquete Python (esto funciona parecido a los package en python)

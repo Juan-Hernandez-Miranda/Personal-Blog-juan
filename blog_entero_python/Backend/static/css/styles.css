@@ -1,0 +1,15 @@
+/* Copia aquí el CSS desde: /frontend/static/css/styles.css */
+/* Línea decorativa después de la línea azul en cada artículo */
+.custom-top-line-after {
+  width: 200%;
+  max-width: 840px;
+  height: 1px;
+  background: #B0B0B0;
+  margin-top: 100px;
+  margin-bottom: 60px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  display: block;
+}
