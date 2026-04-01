@@ -5,7 +5,7 @@ from typing import Optional
 from pydantic import BaseModel
 
 
-class PostBase(BaseModel):
+class PostBase(BaseModel): #este lo que hace es el esquema d ela informacion de los post, es basicamente la informacion que ira en la base de datos
     titulo: str
     descripcion: Optional[str] = None
     contenido: str
@@ -17,7 +17,7 @@ class PostCreate(PostBase):
     """Schema for creating a post."""
 
 
-class PostUpdate(BaseModel):
+class PostUpdate(BaseModel): # esto es por si quieres actualizar un post, todo es opcional por si no quieres cambiar todo slos datos y solo alguno
     titulo: Optional[str] = None
     descripcion: Optional[str] = None
     contenido: Optional[str] = None

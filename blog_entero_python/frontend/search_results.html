@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>the nihilistic engineer - search results</title>
+  <link rel="icon" type="image/png" href="/frontend/static/imagenes/NE_engin.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/frontend/static/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="search-page">
+  <header class="main-header">
+    <div id="name-page">
+      <h1 class="logo">
+        <span>nihilistic</span>
+        <span>engineer</span>
+      </h1>
+    </div>
+
+    <div id="menu-personal-blog">
+      <nav class="navbar">
+        <ul>
+          <li><a href="/frontend/index.html" class="header-enlaces">INICIO</a></li>
+          <li><a href="/frontend/portfolio.html" class="header-enlaces">PORTAFOLIO</a></li>
+          <li><a href="/frontend/about_me.html" class="header-enlaces">ACERCA MIO</a></li>
+          <li class="nav-item">
+            <span class="header-enlaces nav-trigger">POST</span>
+            <div class="dropdown">
+              <a href="post_AI.html">AI</a>
+              <a href="post_tech.html">Tech</a>
+              <a href="post-engineering.html">Engineering</a>
+              <a href="post-sotware.html">Software</a>
+              <a href="post-general.html">General</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="ctn-icon-search">
+      <input type="text" placeholder="Hinted search text" class="search-input">
+      <span class="icon search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+    </div>
+  </header>
+
+  <main class="search-results-page">
+    <section class="search-results-hero">
+      <p class="search-results-kicker">Search</p>
+      <h1 data-search-query>Escribe un titulo para buscar</h1>
+      <p data-search-status class="search-results-status">Usa el buscador de arriba para encontrar posts por titulo.</p>
+    </section>
+
+    <section class="search-results-grid" data-search-results></section>
+  </main>
+
+  <footer>
+    <div id="name-page">
+      <h1 class="logo_footer">
+        <span>nihilistic</span>
+        <span>engineer</span>
+      </h1>
+    </div>
+
+    <div>
+      <ul>
+        <li><a href="#instagram">Instagram</a></li>
+        <li><a href="#facebook">Facebook</a></li>
+        <li><a href="#youtube">YouTube</a></li>
+        <li><a href="#linkedin">Linkedin</a></li>
+        <li><a href="#github">GitHup</a></li>
+      </ul>
+
+      <ul>
+        <li><a href="#email">Email</a></li>
+        <li><a href="#twitter">Twitter</a></li>
+        <li><a href="#main">Main</a></li>
+        <li><a href="#post">Post</a></li>
+        <li><a href="#comment">Comments</a></li>
+      </ul>
+
+      <ul>
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#portafolio">portfolio</a></li>
+        <li><a href="#search">Search</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="footer_page"></div>
+  <script src="/frontend/static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es-us">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>the nihilistic engineer - create post</title>
+  <link rel="icon" type="image/png" href="/frontend/static/imagenes/NE_engin.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="/frontend/static/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="create-post-page">
+  <header class="main-header">
+    <div id="name-page">
+      <h1 class="logo">
+        <span>nihilistic</span>
+        <span>engineer</span>
+      </h1>
+    </div>
+
+    <div id="menu-personal-blog">
+      <nav class="navbar">
+        <ul>
+          <li><a href="/frontend/index.html" class="header-enlaces">INICIO</a></li>
+          <li><a href="/frontend/portfolio.html" class="header-enlaces">PORTAFOLIO</a></li>
+          <li><a href="/frontend/about_me.html" class="header-enlaces">ACERCA MIO</a></li>
+          <li><a href="/frontend/create_post.html" class="header-enlaces">CREAR POST</a></li>
+          <li class="nav-item">
+            <span class="header-enlaces nav-trigger">POST</span>
+            <div class="dropdown">
+              <a href="post_AI.html">AI</a>
+              <a href="post_tech.html">Tech</a>
+              <a href="post-engineering.html">Engineering</a>
+              <a href="post-sotware.html">Software</a>
+              <a href="post-general.html">General</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="ctn-icon-search">
+      <input type="text" placeholder="Hinted search text" class="search-input">
+      <span class="icon search-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+    </div>
+  </header>
+
+  <main class="create-post-main">
+    <section class="create-post-hero">
+      <p class="kicker">Admin</p>
+      <h1>Crear un post</h1>
+      <p>
+        Completa el formulario, eliges una categoria y el post se guarda directo en la base de datos.
+        Al guardarlo te mandara a los resultados de busqueda con ese titulo.
+      </p>
+    </section>
+
+    <section class="create-post-layout">
+      <div class="create-post-card">
+        <h2>Formulario de post</h2>
+        <form class="create-post-form" data-create-post-form>
+          <div class="form-grid">
+            <div class="form-field full-width">
+              <label for="titulo">Titulo</label>
+              <input id="titulo" name="titulo" type="text" placeholder="Ej. Como funciona FastAPI" required>
+            </div>
+
+            <div class="form-field full-width">
+              <label for="descripcion">Descripcion</label>
+              <input id="descripcion" name="descripcion" type="text" placeholder="Resumen corto del post">
+            </div>
+
+            <div class="form-field full-width">
+              <label for="contenido">Contenido</label>
+              <textarea id="contenido" name="contenido" placeholder="Escribe aqui el texto completo del post" required></textarea>
+            </div>
+
+            <div class="form-field">
+              <label for="categoria_id">Categoria</label>
+              <select id="categoria_id" name="categoria_id" data-category-select required>
+                <option value="">Cargando categorias...</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="imagen_url">Imagen URL</label>
+              <input id="imagen_url" name="imagen_url" type="text" placeholder="/frontend/static/imagenes/ejemplo.webp">
+            </div>
+          </div>
+
+          <div class="create-post-actions">
+            <button type="submit">Guardar post</button>
+            <p class="form-status" data-form-status>Llena los campos y guarda el post.</p>
+          </div>
+        </form>
+      </div>
+
+      <aside class="create-post-help">
+        <h2>Como funciona</h2>
+        <p>Este formulario envia la informacion al backend con <strong>POST /posts/</strong>.</p>
+        <ul>
+          <li>Primero carga las categorias desde <strong>/categorias/</strong>.</li>
+          <li>Luego manda el titulo, descripcion, contenido, categoria e imagen.</li>
+          <li>Si todo sale bien, te redirige a la busqueda de ese titulo.</li>
+        </ul>
+
+        <div class="example-box">
+          <p><strong>Ejemplo de titulo</strong></p>
+          <code>Introduccion a Python</code>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <div id="name-page">
+      <h1 class="logo_footer">
+        <span>nihilistic</span>
+        <span>engineer</span>
+      </h1>
+    </div>
+
+    <div>
+      <ul>
+        <li><a href="#instagram">Instagram</a></li>
+        <li><a href="#facebook">Facebook</a></li>
+        <li><a href="#youtube">YouTube</a></li>
+        <li><a href="#linkedin">Linkedin</a></li>
+        <li><a href="#github">GitHup</a></li>
+      </ul>
+
+      <ul>
+        <li><a href="#email">Email</a></li>
+        <li><a href="#twitter">Twitter</a></li>
+        <li><a href="#main">Main</a></li>
+        <li><a href="#post">Post</a></li>
+        <li><a href="#comment">Comments</a></li>
+      </ul>
+
+      <ul>
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#portafolio">portfolio</a></li>
+        <li><a href="#search">Search</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <div class="footer_page"></div>
+  <script src="/frontend/static/js/main.js"></script>
+</body>
+</html>

@@ -205,8 +205,8 @@ body {
   min-height: 100vh;
   background-image:
     linear-gradient(rgba(0, 5, 30, 0.55), rgba(0, 5, 30, 0.75)),
-    url("/frontend/static/imagenes/cubo-minecraft_3840x2160_xtrafondos.com.jpg"),
-    url("../imagenes/cubo-minecraft_3840x2160_xtrafondos.com.jpg");
+    url("/frontend/static/imagenes/cubo-minecraft_3840x2160_xtrafondos.com.webp"),
+    url("../imagenes/cubo-minecraft_3840x2160_xtrafondos.com.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1096,6 +1096,336 @@ article .card {
   text-decoration: none;
 }
 
+/* ================= Search results page ================= */
+
+.search-page {
+  background: #02001D;
+}
+
+.search-results-page {
+  max-width: 1200px;
+  margin: 90px auto 0 auto;
+  padding: 0 20px 80px 20px;
+  box-sizing: border-box;
+}
+
+.search-results-hero {
+  margin-bottom: 40px;
+}
+
+.search-results-kicker {
+  margin: 0 0 12px 0;
+  color: #8ea1ff;
+  font-family: "JetBrains Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+}
+
+.search-results-hero h1 {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.2rem;
+}
+
+.search-results-status {
+  margin: 12px 0 0 0;
+  color: #d0d0d0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+}
+
+.search-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.search-result-card {
+  background: rgba(12, 19, 48, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.search-result-card img,
+.search-result-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+}
+
+.search-result-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #141820, #1a1f2b 40%, #10141d 80%);
+  color: #8ea1ff;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.95rem;
+}
+
+.search-result-content {
+  padding: 18px 18px 22px 18px;
+}
+
+.search-result-meta {
+  margin: 0 0 10px 0;
+  color: #8f97b7;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.search-result-content h3 {
+  margin: 0 0 10px 0;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+}
+
+.search-result-content p {
+  margin: 0;
+  color: #d7d7d7;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.6;
+}
+
+.search-empty {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* ================= Create post page ================= */
+
+.create-post-page {
+  background:
+    radial-gradient(circle at top left, rgba(40, 59, 135, 0.25), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(3, 49, 247, 0.18), transparent 35%),
+    #02001D;
+}
+
+.create-post-main {
+  max-width: 1100px;
+  margin: 90px auto 0 auto;
+  padding: 0 20px 80px 20px;
+  box-sizing: border-box;
+}
+
+.create-post-hero {
+  margin-bottom: 30px;
+}
+
+.create-post-hero .kicker {
+  margin: 0 0 10px 0;
+  color: #8ea1ff;
+  font-family: "JetBrains Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+}
+
+.create-post-hero h1 {
+  margin: 0;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.3rem;
+}
+
+.create-post-hero p {
+  max-width: 780px;
+  margin: 12px 0 0 0;
+  color: #d0d0d0;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.7;
+}
+
+.create-post-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.create-post-card,
+.create-post-help {
+  background: rgba(12, 19, 48, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.create-post-card {
+  padding: 26px;
+}
+
+.create-post-help {
+  padding: 26px;
+  position: sticky;
+  top: 100px;
+}
+
+.create-post-help h2,
+.create-post-card h2 {
+  margin: 0 0 12px 0;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.35rem;
+}
+
+.create-post-help p,
+.create-post-help li,
+.create-post-card label,
+.create-post-card input,
+.create-post-card textarea,
+.create-post-card select {
+  font-family: "Open Sans", sans-serif;
+}
+
+.create-post-help p,
+.create-post-help li {
+  color: #d7d7d7;
+  line-height: 1.65;
+}
+
+.create-post-help ul {
+  margin: 16px 0 0 18px;
+  padding: 0;
+}
+
+.create-post-form {
+  display: grid;
+  gap: 16px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.create-post-form label {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.create-post-form input,
+.create-post-form textarea,
+.create-post-form select {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  border-radius: 14px;
+  padding: 14px 15px;
+  outline: none;
+}
+
+.create-post-form textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.create-post-form input::placeholder,
+.create-post-form textarea::placeholder {
+  color: #8f97b7;
+}
+
+.create-post-form input:focus,
+.create-post-form textarea:focus,
+.create-post-form select:focus {
+  border-color: #4e6cff;
+  box-shadow: 0 0 0 3px rgba(78, 108, 255, 0.18);
+}
+
+.create-post-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.create-post-form button {
+  border: none;
+  background: linear-gradient(135deg, #283B87, #3b57c6);
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 14px 22px;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.create-post-form button:hover {
+  transform: translateY(-1px);
+}
+
+.create-post-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-status {
+  min-height: 24px;
+  margin: 0;
+  color: #d7d7d7;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.88rem;
+}
+
+.form-status[data-status-type="success"] {
+  color: #7ed957;
+}
+
+.form-status[data-status-type="error"] {
+  color: #ff7a7a;
+}
+
+.create-post-help .example-box {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.create-post-help .example-box code {
+  color: #9eb1ff;
+  word-break: break-word;
+}
+
+@media (max-width: 960px) {
+  .create-post-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .create-post-help {
+    position: static;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /*
 en este apartado vamos a poner el diseño de mis proyectos
@@ -1312,7 +1642,7 @@ footer ul li a:hover::after {
   box-sizing: border-box;
   background-image:
     linear-gradient(rgba(0, 5, 30, 0.55), rgba(0, 5, 30, 0.75)),
-    url("../imagenes/chris-ried-ieic5Tq8YMk-unsplash.jpg");
+    url("../imagenes/chris-ried-ieic5Tq8YMk-unsplash.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

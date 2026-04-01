@@ -1,6 +1,6 @@
 """FastAPI routes for Post operations."""
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.orm import Session
 
 from core.deps import get_db
@@ -21,6 +21,20 @@ def listar_posts(db: Session = Depends(get_db)):
     return db.query(Post).order_by(Post.fecha_creacion.desc()).all()
 
 
+@router.get("/search", response_model=list[PostRead])
+def buscar_posts(
+    q: str = Query(..., min_length=1, description="Texto a buscar en el titulo del post"), ## este es el bucador de los post, es decir por si quieres aber cial es es    
+    db: Session = Depends(get_db),
+):
+    termino = f"%{q.strip()}%"
+    return (
+        db.query(Post)
+        .filter(Post.titulo.ilike(termino))
+        .order_by(Post.fecha_creacion.desc())
+        .all()
+    )
+
+
 @router.get("/{post_id}", response_model=PostRead)
 def obtener_post(post_id: int, db: Session = Depends(get_db)):
     post = db.get(Post, post_id)
@@ -32,7 +46,7 @@ def obtener_post(post_id: int, db: Session = Depends(get_db)):
 @router.post("/", response_model=PostRead, status_code=status.HTTP_201_CREATED)
 def crear_post(payload: PostCreate, db: Session = Depends(get_db)):
     _ensure_categoria_exists(db, payload.categoria_id)
-    post = Post(**payload.model_dump())
+    post = Post(**payload.model_dump()) # "**" esto es para empaquetar los datos con clave valor
     db.add(post)
     db.commit()
     db.refresh(post)

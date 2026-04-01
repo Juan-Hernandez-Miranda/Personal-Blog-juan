@@ -1,4 +1,4 @@
-"""FastAPI routes for Categoria operations."""
+"""router para acategoria ."""
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
