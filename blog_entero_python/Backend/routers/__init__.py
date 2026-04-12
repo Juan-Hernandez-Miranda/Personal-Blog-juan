@@ -2,7 +2,7 @@
 
 from fastapi import FastAPI
 
-from . import categorias, comentarios, posts, reacciones
+from . import categorias, comentarios, posts, reacciones, uploads
 
 
 def register_routers(app: FastAPI) -> None:
@@ -11,6 +11,7 @@ def register_routers(app: FastAPI) -> None:
 	app.include_router(posts.router)
 	app.include_router(comentarios.router)
 	app.include_router(reacciones.router)
+	app.include_router(uploads.router)
 
 
 __all__ = ["register_routers"]
