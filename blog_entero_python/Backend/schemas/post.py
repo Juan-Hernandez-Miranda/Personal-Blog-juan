@@ -14,7 +14,7 @@ class PostBase(BaseModel): #este lo que hace es el esquema d ela informacion de 
 
 
 class PostCreate(PostBase):
-    """Schema for creating a post."""
+    """Schema for creating a post. Estado se establece por defecto a 'draft'."""
 
 
 class PostUpdate(BaseModel): # esto es por si quieres actualizar un post, todo es opcional por si no quieres cambiar todo slos datos y solo alguno
@@ -23,11 +23,15 @@ class PostUpdate(BaseModel): # esto es por si quieres actualizar un post, todo e
     contenido: Optional[str] = None
     categoria_id: Optional[int] = None
     imagen_url: Optional[str] = None
+    estado: Optional[str] = None  # draft, published, archived
 
 
 class PostRead(PostBase):
     id: int
     fecha_creacion: datetime
+    fecha_actualizacion: Optional[datetime] = None
+    autor_id: int
+    estado: str  # draft, published, archived
 
     class Config:
         from_attributes = True

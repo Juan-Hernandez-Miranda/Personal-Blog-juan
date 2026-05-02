@@ -13,6 +13,9 @@ pydantic_core==2.41.5
 PyMySQL==1.1.2
 python-dotenv==1.2.1
 python-multipart
+python-jose[cryptography]==3.3.0
+bcrypt==4.1.2
+passlib[bcrypt]==1.7.4
 SQLAlchemy==2.0.46
 sqlmodel==0.0.31
 starlette==0.50.0

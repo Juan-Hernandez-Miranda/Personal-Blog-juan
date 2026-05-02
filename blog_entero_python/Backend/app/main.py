@@ -7,20 +7,32 @@ tengo que terminar antes de que entre otra vez a clases este en donde va converg
 # para iniciar el entorno virtual debes usar el sigueinte comando "   . "C:/Users/miran/.virtualenvs/blog-backend/Scripts/Activate.ps1"  "
 # tener en cuenta que si quiero activar el entorno virtual debe ser en la carpeta "backend"
 
+import logging
+import os
+
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
+from sqlalchemy.exc import SQLAlchemyError
+
 from db.database import Base, engine
+# Importar todos los modelos para que se registren en Base.metadata
+from db.models import User, Post, Categoria, Comentario, Reaccion, Proyecto
 from routers import register_routers
 
 
-import os
+logger = logging.getLogger(__name__)
 
 app = FastAPI()
+
+
 @app.on_event("startup")
 def startup_event():
-    """Ensure all SQLAlchemy models create their tables on boot."""
-    Base.metadata.create_all(bind=engine)
+    """Try to create tables on boot without crashing the whole app if DB is down."""
+    try:
+        Base.metadata.create_all(bind=engine)
+    except SQLAlchemyError as exc:
+        logger.warning("No se pudo inicializar la base de datos al arrancar: %s", exc)
 
 # para activar el servidor debo escribir: uvicorn main:app --reload
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
