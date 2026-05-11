@@ -19,14 +19,22 @@ def _ensure_categoria_exists(db: Session, categoria_id: int) -> None:
 
 
 @router.get("/", response_model=list[PostRead])
-def listar_posts(db: Session = Depends(get_db)):
+def listar_posts(
+    categoria_id: int | None = Query(None, description="Filtrar por categoria"),
+    destacado: bool | None = Query(None, description="Filtrar solo posts destacados"),
+    db: Session = Depends(get_db),
+):
     """
     Lista todos los posts publicados (PÚBLICAMENTE VISIBLE).
     Los visitantes solo ven posts con estado 'published'.
+    Opcionalmente filtra por categoria_id o destacado.
     """
-    return db.query(Post).filter(
-        Post.estado == "published"
-    ).order_by(Post.fecha_creacion.desc()).all()
+    query = db.query(Post).filter(Post.estado == "published")
+    if categoria_id is not None:
+        query = query.filter(Post.categoria_id == categoria_id)
+    if destacado is not None:
+        query = query.filter(Post.destacado == destacado)
+    return query.order_by(Post.fecha_creacion.desc()).all()
 
 
 @router.get("/admin/all", response_model=list[PostRead])
@@ -36,15 +44,24 @@ def listar_todos_posts_admin(
 ):
     """
     Lista TODOS los posts (draft, published, archived) - solo para ADMINS.
-    
-    Args:
-        admin: Usuario autenticado como admin
-        db: Sesión de base de datos
-        
-    Returns:
-        Lista de todos los posts
     """
     return db.query(Post).order_by(Post.fecha_creacion.desc()).all()
+
+
+@router.get("/admin/{post_id}", response_model=PostRead)
+def obtener_post_admin(
+    post_id: int,
+    admin: User = Depends(get_admin_user),
+    db: Session = Depends(get_db),
+):
+    """
+    PROTEGIDO: Obtiene cualquier post sin importar su estado.
+    Solo admins pueden usar este endpoint (para previsualizar borradores).
+    """
+    post = db.get(Post, post_id)
+    if not post:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Post no encontrado")
+    return post
 
 
 @router.get("/search", response_model=list[PostRead])
@@ -122,10 +139,15 @@ def crear_post(
     """
     _ensure_categoria_exists(db, payload.categoria_id)
     
+    data = payload.model_dump()
+    estado_value = data.pop("estado", "draft") or "draft"
+    destacado_value = data.pop("destacado", False) or False
+
     post = Post(
-        **payload.model_dump(),
-        autor_id=admin.id,  # Asignar el admin como autor
-        estado="draft"  # Los posts nuevos empiezan en draft
+        **data,
+        autor_id=admin.id,
+        estado=estado_value,
+        destacado=destacado_value,
     )
     
     db.add(post)
@@ -200,4 +222,23 @@ def eliminar_post(
     db.delete(post)
     db.commit()
     return None
+
+
+@router.patch("/{post_id}/destacado", response_model=PostRead)
+def toggle_destacado(
+    post_id: int,
+    admin: User = Depends(get_admin_user),
+    db: Session = Depends(get_db)
+):
+    """
+    PROTEGIDO: Activa o desactiva el flag 'destacado' de un post.
+    Solo admins pueden usarlo.
+    """
+    post = db.get(Post, post_id)
+    if not post:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Post no encontrado")
+    post.destacado = not post.destacado
+    db.commit()
+    db.refresh(post)
+    return post
 

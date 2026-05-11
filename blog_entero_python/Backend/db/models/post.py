@@ -20,7 +20,7 @@ autor_id (FK a users) - quien creó el post
 estado (draft, published, archived)
 """
 
-from sqlalchemy import Column, Integer, String, Text, DateTime, ForeignKey, Enum
+from sqlalchemy import Boolean, Column, Integer, String, Text, DateTime, ForeignKey, Enum
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 from db.database import Base
@@ -51,6 +51,9 @@ class Post(Base):
     
     # Nuevo: estado del post (draft, published, archived)
     estado = Column(Enum(EstadoPost), default=EstadoPost.DRAFT, nullable=False)
+
+    # Destacado: aparece en "Best in the Month"
+    destacado = Column(Boolean, default=False, nullable=False, server_default='0')
     
     # Relaciones
     categoria = relationship("Categoria", back_populates="posts")
